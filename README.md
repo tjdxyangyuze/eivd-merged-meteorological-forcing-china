@@ -32,24 +32,29 @@ This framework is developed for generating the dataset described in:
 
 ## Repository Structure
 eivd-fusion/
-├── requirements.txt # Python dependencies
-├── config.py # User configuration
-├── main.py # Main entry point
-├── preprocessing/ # Data preprocessing
-│ ├── resample.py # Spatial resampling
-│ └── bias_correction.py # Monthly bias correction
-├── eivd_core/ # EIVD fusion modules
-│ ├── eivd_base.py # Core EIVD algorithm
-│ ├── eivd_temperature.py
-│ ├── eivd_humidity.py
-│ ├── eivd_pressure.py
-│ └── eivd_wind.py
-└── utils/ # Utilities
-├── io_utils.py # GeoTIFF I/O
-├── grid_utils.py # Grid operations
-└── validation.py # Validation metrics
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── config.py
+├── main.py
+├── preprocessing/
+│   ├── __init__.py
+│   ├── resample.py
+│   └── bias_correction.py
+├── eivd_core/
+│   ├── __init__.py
+│   ├── eivd_base.py
+│   ├── eivd_temperature.py
+│   ├── eivd_humidity.py
+│   ├── eivd_pressure.py
+│   └── eivd_wind.py
+└── utils/
+    ├── __init__.py
+    ├── io_utils.py
+    ├── grid_utils.py
+    └── validation.py
 
-text
 
 ## Data Requirements
 
@@ -78,17 +83,16 @@ text
 [ 0, σ_w², σ_wz],
 [ 0, σ_wz, σ_z²]]
 
-text
 
 **BLUE Optimal Weights [Eq.(7)]:**
 w* = (Σ⁻¹ · 1) / (1ᵀ · Σ⁻¹ · 1)
 
-text
+
 
 **Merged Product [Eq.(8)]:**
 X_merged = w_x* · X_corr_x + w_w* · X_corr_w + w_z* · X_corr_z
 
-text
+
 
 ### Two-Step Wind Merging
 
@@ -113,7 +117,7 @@ output_directory/
 ├── validation_results.json # Validation metrics
 └── diagnostics_report.txt # Diagnostic report
 
-text
+
 
 ## Dependencies
 
