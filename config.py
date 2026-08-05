@@ -1,6 +1,5 @@
 """
 User configuration for the EIVD fusion framework.
-Edit this file before running the pipeline.
 """
 
 # ============================================================
@@ -25,9 +24,16 @@ DATA_PATHS = {
     'calibration': '/path/to/cma_station_interpolated'
 }
 
-OUTPUT_DIR = '/path/to/output_directory'
+# ERA5 hourly data for downscaling (separate directory)
+ERA5_HOURLY_PATH = '/path/to/era5_hourly_data'
+
+# DEM file for topographic regression
 DEM_PATH = '/path/to/dem_0.1deg.tif'
-STATION_UV_PATH = '/path/to/station_uv'
+
+# Station U/V data for wind decomposition (optional)
+STATION_UV_PATH = '/path/to/station_uv_data'
+
+OUTPUT_DIR = '/path/to/output_directory'
 
 # ============================================================
 # EIVD Parameters
@@ -39,9 +45,22 @@ MIN_WEIGHT = -1.0
 MAX_WEIGHT = 1.0
 
 # ============================================================
+# Topographic Regression Parameters
+# ============================================================
+
+TOPOGRAPHIC_REGRESSION_LAPSE_RATE_LIMIT = 0.01
+
+# ============================================================
+# Time Downscaling Parameters
+# ============================================================
+
+DOWNSCALE_TO_HOURLY = True
+HOURLY_OUTPUT_DIR = '/path/to/hourly_output'
+
+# ============================================================
 # Flags
 # ============================================================
 
-USE_TOPOGRAPHIC_REGRESSION = True
+USE_TOPGRAPHIC_REGRESSION = True
 USE_TWO_STEP_WIND = True
 VALIDATE_RESULTS = True
