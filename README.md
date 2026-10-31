@@ -42,6 +42,7 @@ eivd-fusion/
 │   ├── __init__.py
 │   ├── resample.py
 │   └── bias_correction.py
+│   └── station_interpolation.py
 ├── eivd_core/
 │   ├── __init__.py
 │   ├── eivd_base.py
